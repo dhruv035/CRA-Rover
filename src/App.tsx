@@ -92,7 +92,7 @@ const App = () => {
     },
   });
   const { data: availableAmount } = useContractRead({
-    address: process.env.REACT_AP_CONTRACT_ADDRESS as `0x${string}`,
+    address: process.env.REACT_APP_CONTRACT_ADDRESS as `0x${string}`,
     abi: [...contract.abi],
     functionName: "getAvailableVestingAmount",
     args: [address],
@@ -111,8 +111,10 @@ const App = () => {
   });
 
   if (schedule) {
+    console.log("AAA", vestingRound, nextVesting);
   }
 
+  console.log("SS",availableAmount)
   return (
     <div>
       <head>
